@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 // counterScreen extiende de StatefulWidget
-class CounterScreen extends StatefulWidget {
+class CounterFuntionsScreen extends StatefulWidget {
   // constructor
-  const CounterScreen({super.key});
+  const CounterFuntionsScreen({super.key});
 
   // sobreescribir el metodo createState
   @override
-  State<CounterScreen> createState() => _CounterScreenState();
+  State<CounterFuntionsScreen> createState() => _CounterFuntionsScreenState();
 }
 
-class _CounterScreenState extends State<CounterScreen> {
+class _CounterFuntionsScreenState extends State<CounterFuntionsScreen> {
   int clickCounter = 0;
 
   @override
@@ -18,10 +18,22 @@ class _CounterScreenState extends State<CounterScreen> {
     return Scaffold(
         // titulo de la app
         appBar: AppBar(
-            title: const Text('Contador by Anyel EC'), // titulo
-            centerTitle: true // centrar el titulo
+            title: const Text('Función de Contador'), // titulo
+            centerTitle: true, // centrar el titulo
+            actions: [
+              IconButton(
+              icon: const Icon( Icons.refresh_rounded),
+              onPressed: () {
+                setState(() {
+                  clickCounter = 0;
+                });
+              },
+              ),
+            ], // acciones 
 
             ),
+        
+
         // cuerpo de la app
         body:  Center(
           // centrar el contenido
